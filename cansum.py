@@ -20,5 +20,22 @@ def canSumMemo(n, options, mem={}):
     for option in options:
         mem[n] = canSumMemo(n-option, options, mem)
         return mem[n]
+    
+def canSumIter(n, options):
+    stack = [n] 
+    can = False
+    while len(stack) > 0:
+        n = stack.pop() 
+        if n == 0:
+            return True
+        if n < 0:
+            can = can or False 
+            continue
 
-print(canSum(10,[7,14]))
+        for option in options:
+            stack.append(n-option)  
+    return can
+
+            
+
+print(canSumIter(300,[7,14]))
