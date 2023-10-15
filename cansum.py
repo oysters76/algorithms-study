@@ -38,4 +38,4 @@ def canSumIter(n, options):
 
             
 
-print(canSumIter(300,[7,14]))
+print(canSumMemo(7,[7,14]))
